@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow: hidden; /* Disable scrollbar */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Left Container Styles */
+        .left-container {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 0;
+            color: #17a2b8;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-menu li {
+            margin: 1rem 0;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.7rem 1rem;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: #495057;
+            color: #17a2b8;
+        }
+
+        /* Right Container Styles */
+        .right-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        /* Metric Section Styles */
+        .metric-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+            max-width: 1200px; /* Limit width of metrics on larger screens */
+            padding: 1rem;
+        }
+
+        .metric {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric h3 {
+            margin: 0;
+            color: #555;
+            font-size: 1.2rem;
+        }
+
+        .metric p {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #17a2b8;
+        }
+
+        .metric:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            background: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .metric-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left-container {
+                width: 200px; /* Shrink sidebar for tablets */
+            }
+
+            .metric-container {
+                grid-template-columns: 1fr; /* Single-column layout for small screens */
+                gap: 16px;
+            }
+
+            .right-container {
+                padding: 1rem; /* Reduce padding on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar-header h2 {
+                font-size: 1.2rem; /* Adjust font size for very small screens */
+            }
+
+            .sidebar-menu li a {
+                font-size: 1rem; /* Smaller link text for small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Container -->
+        <div class="left-container">
+            <nav class="sidebar">
+                <!-- Sidebar Header -->
+                <div class="sidebar-header">
+                    <h2>R I Z Z</h2>
+                </div>
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu">
+                    <li><a href="/">Dashboard</a></li>
+                    <li><a href="/inventory">Inventory</a></li>
+                    <li><a href="/sales">Sales</a></li>
+                    <li><a href="/users">Users</a></li>
+                    <li><a href="/reports">Reports</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Container -->
+        <div class="right-container">
+            <!-- Metrics -->
+            <div class="metric-container">
+                <div class="metric">
+                    <h3>Total Sales</h3>
+                    <p>$5000</p>
+                </div>
+                <div class="metric">
+                    <h3>Inventory Items</h3>
+                    <p>120</p>
+                </div>
+                <div class="metric">
+                    <h3>Active Users</h3>
+                    <p>15</p>
+                </div>
+                <div class="metric">
+                    <h3>Vendors</h3>
+                    <p>20</p>
+                </div>
+                <div class="metric">
+                    <h3>Refunds</h3>
+                    <p>$50</p>
+                </div>
+                <div class="metric">
+                    <h3>Low Stock Items</h3>
+                    <p>3</p>
+                </div>
+                <div class="metric">
+                    <h3>Total Transactions</h3>
+                    <p>350</p>
+                </div>
+                <div class="metric">
+                    <h3>Pending Orders</h3>
+                    <p>5</p>
+                </div>
+                <div class="metric">
+                    <h3>Daily Revenue</h3>
+                    <p>$500</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
