@@ -16,7 +16,7 @@ def dashboard():
         'pending_orders': 5,
         'daily_revenue': 500
     }
-    return render_template('dashboard.html', metrics=metrics)
+    return render_template('index.html', metrics=metrics)
 
 
 @app.route('/inventory')
